@@ -134,3 +134,17 @@ class Investment(Base):
     
     # Relationship
     user = relationship("User", back_populates="investments")
+    
+class SIPScheme(Base):
+    __tablename__ = "sip_schemes"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+
+    name = Column(String, nullable=False)
+    min_amount = Column(Float, nullable=False)
+    max_amount = Column(Float, nullable=False)
+
+    suitable_for = Column(Enum(ProfileType), nullable=False)
+    risk_level = Column(Enum(RiskLevel), nullable=False)
+
+    description = Column(String, nullable=True)

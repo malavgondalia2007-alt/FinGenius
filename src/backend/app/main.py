@@ -1,18 +1,17 @@
 from .core.database import engine, Base
-from .models import models
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .core.config import settings
-from .api import auth, expenses, income, goals, profiles
+from .api import auth, expenses, income, goals, profiles, sip
+# ❌ REMOVE this import
+# from app.utils.seed_sips import seed_sip_schemes
 
 app = FastAPI(
     title="FinGenius API",
     description="Backend API for FinGenius Financial Management Platform",
     version="1.0.0"
 )
-Base.metadata.create_all(bind=engine)
-
-
 # CORS Configuration
 app.add_middleware(
     CORSMiddleware,
@@ -28,6 +27,7 @@ app.include_router(expenses.router)
 app.include_router(income.router)
 app.include_router(goals.router)
 app.include_router(profiles.router)
+app.include_router(sip.router)
 
 
 @app.get("/")
@@ -42,3 +42,8 @@ async def root():
 @app.get("/health")
 async def health_check():
     return {"status": "healthy"}
+
+# ❌ REMOVE startup seeding completely
+# @app.on_event("startup")
+# def seed_data():
+#     seed_sip_schemes()
