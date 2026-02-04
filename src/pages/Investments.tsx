@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Layout } from "../components/Layout";
 import { Card } from "../components/ui/Card";
 import {
   TrendingDown,
@@ -177,6 +176,6 @@ export function Investments() {
           ))}
         </div>
       )}
-    </Layout>
+    </>
   );
 }

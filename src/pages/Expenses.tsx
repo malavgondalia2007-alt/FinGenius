@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Layout } from '../components/Layout';
 import { Card } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
@@ -213,7 +212,7 @@ export function Expenses() {
   '#ec4899'];
 
   return (
-    <Layout>
+    <>
       {/* Success Notification */}
       {successMsg &&
       <div className="fixed top-24 right-8 bg-green-500 text-white px-6 py-3 rounded-xl shadow-lg animate-fade-in z-50 flex items-center gap-2">
@@ -704,6 +703,6 @@ export function Expenses() {
           </div>
         </div>
       }
-    </Layout>);
+    </>);
 
 }

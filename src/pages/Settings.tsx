@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Layout } from '../components/Layout';
 import { Card } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
@@ -489,6 +488,6 @@ export function Settings() {
           </div>
         </div>
       </div>
-    </Layout>);
+    </>);
 
 }

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Layout } from '../components/Layout';
 import { MetricCard } from '../components/MetricCard';
 import { Card } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
@@ -166,7 +165,7 @@ export function Dashboard() {
   }];
 
   return (
-    <Layout>
+    <>
       {/* Welcome Section */}
       <div className={`mb-8 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}>
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-royal-600 via-midnight-600 to-royal-700 p-8 shadow-royal">
@@ -482,6 +481,6 @@ export function Dashboard() {
           </ResponsiveContainer>
         </Card>
       }
-    </Layout>);
+    </>);
 
 }

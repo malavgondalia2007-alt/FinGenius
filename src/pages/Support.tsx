@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Layout } from '../components/Layout';
 import { SupportCard } from '../components/SupportCard';
 import { HelpChatbot } from '../components/HelpChatbot';
 import { Card } from '../components/ui/Card';
@@ -160,7 +159,7 @@ export function Support() {
   }];
 
   return (
-    <Layout>
+    <>
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-3">
           Support & Help Center
@@ -449,6 +448,6 @@ export function Support() {
       </div>
 
       <HelpChatbot />
-    </Layout>);
+    </>);
 
 }

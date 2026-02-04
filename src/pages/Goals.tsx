@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Layout } from '../components/Layout';
 import { Card } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
 import {
@@ -137,7 +136,7 @@ export function Goals() {
     }
   };
   return (
-    <Layout>
+    <>
       <div className="flex justify-between items-center mb-8">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Financial Goals</h1>
@@ -364,6 +363,6 @@ export function Goals() {
       }
 
       <HelpChatbot />
-    </Layout>);
+    </>);
 
 }

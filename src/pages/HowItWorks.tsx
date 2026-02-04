@@ -1,5 +1,4 @@
 import React from 'react';
-import { Layout } from '../components/Layout';
 import { FeatureCard } from '../components/FeatureCard';
 import { Card } from '../components/ui/Card';
 import {
@@ -132,7 +131,7 @@ export function HowItWorks() {
   }];
 
   return (
-    <Layout>
+    <>
       <div className="text-center mb-16 mt-8">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
           How FinGenius Works
@@ -477,6 +476,6 @@ export function HowItWorks() {
           </div>
         </Card>
       </div>
-    </Layout>);
+    </>);
 
 }

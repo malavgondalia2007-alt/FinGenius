@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Layout } from '../components/Layout';
 import { Card } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
@@ -530,6 +529,6 @@ export function ScenarioPlanning() {
           </div>
         </div>
       </div>
-    </Layout>);
+    </>);
 
 }
