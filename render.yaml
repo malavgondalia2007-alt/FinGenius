@@ -3,6 +3,7 @@ services:
   - type: web
     name: fingenius-backend
     runtime: python
+    plan: free
     rootDir: src/backend
     buildCommand: "./render-build.sh"
     startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
