@@ -2,16 +2,12 @@
 # exit on error
 set -o errexit
 
-# Upgrade pip
-echo "Upgrading pip..."
-pip install --upgrade pip
+# Upgrade pip and build tools
+echo "Upgrading pip, setuptools, and wheel..."
+pip install --upgrade pip setuptools wheel
 
-# Install python dependencies
+# Install python dependencies - use --prefer-binary to avoid building from source
 echo "Installing dependencies from requirements.txt..."
-pip install -r requirements.txt
-
-# Run seeding script if needed
-# echo "Seeding database..."
-# python seed_db.py
+pip install --prefer-binary -r requirements.txt
 
 echo "Build complete! ✅"
