@@ -25,7 +25,7 @@ services:
           property: url
 
   # Frontend Static Site
-  - type: static
+  - type: static_site
     name: fingenius-frontend
     env: static
     buildCommand: "npm install && npm run build"
