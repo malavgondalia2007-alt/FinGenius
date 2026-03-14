@@ -8,7 +8,9 @@ services:
     startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
     envVars:
       - key: DATABASE_URL
-        sync: false
+        fromDatabase:
+          name: fingenius-db
+          property: connectionString
       - key: SECRET_KEY
         generateValue: true
       - key: ALLOWED_ORIGINS
@@ -34,3 +36,7 @@ services:
           type: web
           name: fingenius-backend
           property: url
+
+databases:
+  - name: fingenius-db
+    plan: free # Use free tier for managed Postgres
