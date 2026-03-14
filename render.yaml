@@ -1,0 +1,36 @@
+services:
+  # Backend Web Service
+  - type: web
+    name: fingenius-backend
+    env: python
+    rootDir: src/backend
+    buildCommand: "./render-build.sh"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ALLOWED_ORIGINS
+        fromService:
+          type: static
+          name: fingenius-frontend
+          property: url
+      - key: FRONTEND_URL
+        fromService:
+          type: static
+          name: fingenius-frontend
+          property: url
+
+  # Frontend Static Site
+  - type: static
+    name: fingenius-frontend
+    env: static
+    buildCommand: "npm install && npm run build"
+    staticPublishDir: "dist"
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: fingenius-backend
+          property: url

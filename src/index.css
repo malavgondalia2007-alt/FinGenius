@@ -1,0 +1,325 @@
+/* URL IMPORTS (SUCH AS FONT IMPORTS) SHOULD BE KEPT ABOVE TAILWIND IMPORTS - DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+
+/* PLEASE NOTE: THESE TAILWIND IMPORTS SHOULD NEVER BE DELETED - DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* DO NOT DELETE THESE TAILWIND IMPORTS, OTHERWISE THE STYLING WILL NOT RENDER AT ALL - DO NOT DELETE THIS COMMENT */
+
+@layer base {
+  :root {
+    /* Editorial Finance Palette */
+    --bg-cream: 250 248 245;
+    /* #faf8f5 */
+    --bg-white: 255 255 255;
+    /* #ffffff */
+    --text-charcoal: 26 26 46;
+    /* #1a1a2e */
+    --text-secondary: 107 114 128;
+    /* #6b7280 */
+    /* Accents */
+    --accent-coral: 255 107 107;
+    /* #ff6b6b */
+    --accent-sage: 126 176 155;
+    /* #7eb09b */
+    --accent-amber: 244 162 97;
+    /* #f4a261 */
+    --accent-navy: 13 27 42;
+    /* #0d1b2a */
+    /* Shadows */
+    --shadow-warm-sm: 0 2px 8px rgba(26, 26, 46, 0.04);
+    --shadow-warm-md: 0 4px 16px rgba(26, 26, 46, 0.06);
+    --shadow-warm-lg: 0 8px 32px rgba(26, 26, 46, 0.08);
+    --shadow-coral: 0 4px 16px rgba(255, 107, 107, 0.25);
+  }
+
+  body {
+    @apply text-charcoal font-sans antialiased;
+    color: #1a1a2e;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-normal tracking-tight;
+  }
+}
+
+/* ===== GLOBAL COLOR CYCLING ANIMATIONS ===== */
+@keyframes bgColorCycle {
+
+  0%,
+  100% {
+    background-color: #fef2f2;
+  }
+
+  20% {
+    background-color: #f0fdf4;
+  }
+
+  40% {
+    background-color: #eef2ff;
+  }
+
+  60% {
+    background-color: #faf5ff;
+  }
+
+  80% {
+    background-color: #f0fdfa;
+  }
+}
+
+@keyframes orbColorCycle1 {
+
+  0%,
+  100% {
+    background-color: rgba(255, 111, 97, 0.25);
+  }
+
+  25% {
+    background-color: rgba(168, 85, 247, 0.25);
+  }
+
+  50% {
+    background-color: rgba(99, 102, 241, 0.25);
+  }
+
+  75% {
+    background-color: rgba(20, 184, 166, 0.25);
+  }
+}
+
+@keyframes orbColorCycle2 {
+
+  0%,
+  100% {
+    background-color: rgba(139, 195, 148, 0.25);
+  }
+
+  25% {
+    background-color: rgba(20, 184, 166, 0.25);
+  }
+
+  50% {
+    background-color: rgba(168, 85, 247, 0.25);
+  }
+
+  75% {
+    background-color: rgba(255, 111, 97, 0.25);
+  }
+}
+
+@keyframes orbColorCycle3 {
+
+  0%,
+  100% {
+    background-color: rgba(99, 102, 241, 0.2);
+  }
+
+  33% {
+    background-color: rgba(255, 111, 97, 0.2);
+  }
+
+  66% {
+    background-color: rgba(139, 195, 148, 0.2);
+  }
+}
+
+@keyframes sparkleColor {
+
+  0%,
+  100% {
+    color: #FF6F61;
+  }
+
+  20% {
+    color: #8BC394;
+  }
+
+  40% {
+    color: #6366F1;
+  }
+
+  60% {
+    color: #A855F7;
+  }
+
+  80% {
+    color: #14B8A6;
+  }
+}
+
+@keyframes colorCycle {
+
+  0%,
+  100% {
+    --glow-color: rgba(255, 111, 97, 0.4);
+    --bg-color: #FF6F61;
+  }
+
+  20% {
+    --glow-color: rgba(139, 195, 148, 0.4);
+    --bg-color: #8BC394;
+  }
+
+  40% {
+    --glow-color: rgba(99, 102, 241, 0.4);
+    --bg-color: #6366F1;
+  }
+
+  60% {
+    --glow-color: rgba(168, 85, 247, 0.4);
+    --bg-color: #A855F7;
+  }
+
+  80% {
+    --glow-color: rgba(20, 184, 166, 0.4);
+    --bg-color: #14B8A6;
+  }
+}
+
+@keyframes glowPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 40px var(--glow-color), 0 0 80px var(--glow-color);
+    opacity: 0.8;
+  }
+
+  50% {
+    box-shadow: 0 0 60px var(--glow-color), 0 0 120px var(--glow-color);
+    opacity: 1;
+  }
+}
+
+/* Global animated background class */
+.color-cycle-bg {
+  animation: bgColorCycle 12s ease-in-out infinite;
+}
+
+.color-cycle-orb1 {
+  animation: orbColorCycle1 10s ease-in-out infinite;
+}
+
+.color-cycle-orb2 {
+  animation: orbColorCycle2 12s ease-in-out infinite;
+}
+
+.color-cycle-orb3 {
+  animation: orbColorCycle3 14s ease-in-out infinite;
+}
+
+.color-cycle-sparkle {
+  animation: sparkleColor 8s ease-in-out infinite;
+}
+
+.color-cycle-logo {
+  animation: colorCycle 8s ease-in-out infinite;
+}
+
+.color-cycle-glow {
+  animation: colorCycle 8s ease-in-out infinite, glowPulse 3s ease-in-out infinite;
+  background: var(--bg-color);
+}
+
+@layer utilities {
+
+  /* Geometric Pattern Background */
+  .bg-pattern-currency {
+    background-color: #faf8f5;
+    background-image: radial-gradient(#1a1a2e 0.5px, transparent 0.5px), radial-gradient(#1a1a2e 0.5px, #faf8f5 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    opacity: 0.5;
+  }
+
+  /* Text Utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Smooth Transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Animation Delays */
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+
+  /* Loading Shimmer */
+  .shimmer-warm {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
