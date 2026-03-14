@@ -17,12 +17,12 @@ services:
         fromService:
           type: web
           name: fingenius-frontend
-          property: url
+          envVarKey: RENDER_EXTERNAL_URL
       - key: FRONTEND_URL
         fromService:
           type: web
           name: fingenius-frontend
-          property: url
+          envVarKey: RENDER_EXTERNAL_URL
 
   # Frontend Static Site
   - type: web
@@ -35,7 +35,7 @@ services:
         fromService:
           type: web
           name: fingenius-backend
-          property: url
+          envVarKey: RENDER_EXTERNAL_URL
 
 databases:
   - name: fingenius-db
