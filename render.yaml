@@ -3,14 +3,14 @@ services:
   # Backend Web Service
   - type: web
     name: fingenius-backend
-    runtime: python
+    env: python
     plan: free
     rootDir: src/backend
     buildCommand: "bash render-build.sh"
     startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
     envVars:
       - key: PYTHON_VERSION
-        value: "3.11"
+        value: "3.11.8"
       - key: DATABASE_URL
         fromDatabase:
           name: fingenius-db
@@ -31,7 +31,7 @@ services:
   # Frontend Static Site
   - type: web
     name: fingenius-frontend
-    runtime: static
+    env: static
     buildCommand: "npm install && npm run build"
     staticPublishPath: "./dist"
     envVars:
