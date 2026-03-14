@@ -29,15 +29,10 @@ services:
           envVarKey: RENDER_EXTERNAL_URL
 
   # Frontend Static Site
-  - type: web
+  - type: static_site
     name: fingenius-frontend
-    env: static
     buildCommand: "npm install && npm run build"
-    staticPublishPath: "./dist"
-    routes:
-      - type: rewrite
-        source: "/*"
-        destination: "/index.html"
+    publishPath: "./dist"
     envVars:
       - key: VITE_API_URL
         fromService:
